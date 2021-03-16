@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 100vh;
+}
+
+@import "./components/header";
+@import "./keyframes/keyframes";
+
+.display{
+    display: flex;
+    animation: menuIn 1s;
+}
+
+.hide{
+    display: flex;
+    animation: menuOut 1s;
+}

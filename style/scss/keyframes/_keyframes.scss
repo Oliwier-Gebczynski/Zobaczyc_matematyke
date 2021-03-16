@@ -1,0 +1,22 @@
+@keyframes menuIn {
+    0%{
+        top: -30%;
+        
+    }
+
+    100%{
+        top: 0%;
+    }
+}
+
+@keyframes menuOut{
+    0%{
+        top: 0%;
+        display: flex;
+    }
+
+    100%{
+        top:-30%;
+        display: flex;
+    }
+}
