@@ -1,6 +1,6 @@
 @keyframes menuIn {
     0%{
-        top: -30%;
+        top: -50%;
         
     }
 
@@ -16,7 +16,17 @@
     }
 
     100%{
-        top:-30%;
+        top:-50%;
         display: flex;
+    }
+}
+
+@keyframes iconSpin{
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(-1000deg);
     }
 }
