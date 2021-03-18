@@ -54,6 +54,11 @@
             text-decoration: none;
             font-size: 15px;
             color: $font;
+
+            &:hover{
+                padding-bottom: 2%;
+                border-bottom: solid $darkBlue 2px;
+            }
         }
     }
 }

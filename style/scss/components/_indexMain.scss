@@ -1,7 +1,7 @@
 .main{
     display: flex;
     justify-content: center;
-    padding: 0 10% 10px 10%;
+    padding: 0 5% 30% 5%;
     z-index: 10;
 }
 
@@ -51,6 +51,7 @@
 @media (min-width: 800px)and(max-width: 1100px){
     .main{
         justify-content: flex-start;
+        padding: 0 5% 0 5%; ;
     }
 
     .article{
@@ -72,7 +73,7 @@
 @media (min-width: 1100px){
     .main{
         justify-content: flex-start;
-        padding-left: 15%;
+        padding: 0 5% 0 15%;
     }
 
     .article{
