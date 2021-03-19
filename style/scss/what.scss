@@ -15,16 +15,27 @@
 .container{
     background-color: $bgcColor;
     height: 100%;
+    padding-bottom: 5%;
 }
 
 .main{
     padding: 25% 5% 0 5%;
-}
-
-.article, .articleWP{
     display: flex;
     flex-direction: column;
-    padding-bottom: 15%;
+    align-items: center;
+}
+
+.img--first, .img--second{
+        width: 80vw;
+        margin: auto;
+        border-radius: 5px;
+        padding-bottom: 10%;
+}
+
+.article{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5%;
 
     &__title{
         margin-left: 5%;
@@ -39,41 +50,45 @@
         width: 95%;
         color: $darkFont;
         font-weight: 500;
-
-        &--special{
-            padding: 5% 0 5% 5%;
-        width: 95%;
-        color: $darkFont;
-        font-weight: 500;
-        }
         
         &-span{
             color: $darkBlue;
             font-weight: 700;
         }
     }
-
-    &__img{
-        width: 80vw;
-        margin: auto;
-        border-radius: 5px;
-
-        &--special{
-            width: 80vw;
-            margin: auto;
-        }
-    }
 }
+
+.button{
+        display: block;
+        width: 70%;
+        padding: 2%;
+        margin: 0;
+        font-size: 15px;
+        text-align: center;
+        text-decoration: none;
+        color: $lightBlue;
+        border: solid $lightBlue 1px;
+        border-radius: 5px;
+        transition: cubic-bezier(.13,.94,1,.79) .1s;
+
+        &:hover{
+            background-color: $lightBlue;
+            color: $bgcColor;
+            font-weight: 600;
+        }
+}
+
 
 @media (min-width: 800px)and(max-width: 1150px){
     .main{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr) 5%;
         grid-template-areas: 
-        "first first"
-        "second second"
+        "first firstImg"
+        "second secondImg"
         "third fourth"
+        "button button"
         ;
         padding-top: 15%;
     }
@@ -88,32 +103,32 @@
 
     .third{
         grid-area: third;
-        width: 50%;
-        display: flex;
     }
 
     .fourth{
         grid-area: fourth;
-        width: 50%;
-        display: flex;
     }
 
-    .articleWP{
-        width: 90%;
+    .img--first{
+        grid-area: firstImg;
+        width: 45vw;
+        place-self: center;
+        margin: 0;
+    }
+
+    .img--second{
+        grid-area: secondImg;
+        width: 35vw;
+        place-self: center;
+        border-radius: 5px;
+        margin: 0;
     }
 
     .article{
-        height: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 2.5rem 60%;
-        grid-template-areas: 
-        "title img"
-        "text img";
         padding-bottom: 5%;
+        place-self: center;
 
         &__title{
-            grid-area: title;
             padding: 0 0 0 2%;
             display: flex;
             align-items: center;
@@ -121,46 +136,39 @@
         }
 
         &__text{
-            width: 90%;
-                grid-area: text;
+                width: 90%;
                 padding: 0;
                 font-size: 1.1rem;
-                align-self: start;
-                justify-self: center;
                 padding-top: 7%;
                 color: $darkFont;
                 font-weight: 500;
         }
-
-        &__img{
-            grid-area: img;
-            width: 45vw;
-            place-self: center;
-            margin: 0;
-            
-            &--special{
-                width: 35vw;
-                grid-area: img;
-                place-self: center;
-                border-radius: 5px;
-                margin: 0;
-            }
-        }
-
     }
+
+    .button{
+        grid-area: button;
+        place-self: center;
+        width: 40%;
+        margin: 0;
+    }
+
 }
 
 @media (min-width: 1150px){
     .main{
+        width: 80%;
+        margin: auto;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr) 5%;
         grid-template-areas: 
-        "first first"
-        "second second"
+        "first firstImg"
+        "second secondImg"
         "third fourth"
+        "button button"
         ;
         padding-top: 10%;
+        row-gap: 1%;
     }
 
     .first{
@@ -173,87 +181,55 @@
 
     .third{
         grid-area: third;
-        width: 50%;
-        display: flex;
     }
 
     .fourth{
         grid-area: fourth;
-        width: 50%;
-        display: flex;
     }
 
-    .articleWP{
-        height: 90%;
-        width: 60%;
+    .img--first{
+        grid-area: firstImg;
+        width: 30vw;
         place-self: center;
+        margin: 0;
+        padding-bottom: 0;
+    }
 
-        &__title{
-            padding: 0 0 0 2%;
-            display: flex;
-            align-items: center;
-            font-size: 3rem;
-        }
-
-        &__text{
-                width: 90%;
-                grid-area: text;
-                padding: 0;
-                font-size: 1.5rem;
-                align-self: start;
-                justify-self: center;
-                padding-top: 7%;
-                color: $darkFont;
-                font-weight: 500;
-        }
+    .img--second{
+        grid-area: secondImg;
+        width: 20vw;
+        place-self: center;
+        border-radius: 5px;
+        margin: 0;
+        padding-bottom: 0;
     }
 
     .article{
         place-self: center;
-        height: 90%;
-        width: 80%;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 3.5rem 50%;
-        grid-template-areas: 
-        "title img"
-        "text img";
         padding-bottom: 0%;
+        width: 75%;
 
         &__title{
-            grid-area: title;
             padding: 0 0 0 2%;
             display: flex;
             align-items: center;
-            font-size: 3rem;
+            font-size: 2rem;
         }
 
         &__text{
-            width: 90%;
-                grid-area: text;
+                width: 90%;
                 padding: 0;
-                font-size: 1.5rem;
-                align-self: start;
-                justify-self: center;
+                font-size: 1.1rem;
                 padding-top: 7%;
                 color: $darkFont;
                 font-weight: 500;
         }
+    }
 
-        &__img{
-            grid-area: img;
-            width: 30vw;
-            place-self: center;
-            margin: 0;
-            
-            &--special{
-                width: 25vw;
-                grid-area: img;
-                place-self: center;
-                border-radius: 5px;
-                margin: 0;
-            }
-        }
-
+    .button{
+        grid-area: button;
+        place-self: center;
+        width: 40%;
+        padding:1%;
     }
 }
