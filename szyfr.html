@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Oliwier Gębczyński 2021">
+    <link rel="stylesheet" href="./style/scss/szyfr.css">
+    <title>Szyfrowanie RSA</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <button class="header__button" id="navButton">⚙️</button>
+            <div class="header__line"></div>
+            <nav class="nav" id="nav">
+                <ul class="list">
+                    <li class="list__element"><a href="./index.html" class="list__element-link">STRONA GŁÓWNA</a></li>
+                    <li class="list__element"><a href="./what.html" class="list__element-link">CZYM JEST RSA?</a></li>
+                    <li class="list__element"><a href="./szyfr.html" class="list__element-link">JAK ZASZYFROWAĆ WIADOMOŚĆ?</a></li>
+                    <li class="list__element"><a href="#" class="list__element-link">PODSUMOWANIE</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="info">
+            <article class="article" id="firstArticle">
+                <h3 class="article__title">Funkcja zapadni</h3>
+                <p class="article__text">Algorytm jest łatwy do obliczenia w jednym kierunku, ale prawie niemożliwy do obliczenia w odwrotnej kolejności. RSA wykorzystywane są liczby o długości <span class="article__text-span">617cyfr (2048 bit)</span>, przez co nie jesteśmy w stanie rozszyfrować wiadomości bez <span class="article__text-span">klucza prywatnego</span>. </p>
+            </article>
+
+            <article class="article" id="secondArticle">
+                <h3 class="article__title">Generowanie liczb pierwszych</h3>
+                <p class="article__text" id="firstText">Generownie klucza zaczyna się od wybrania liczb pierwszych <span>p</span> i <span>q</span>. Muszą one być bardzo duże, a także jak najdalej od siebie. Gdy liczby są małe lub blisko siebie łatwiej je złamać.<br><br>
+                Na naszę potrzeby wybierzemy małe liczby. Łatwiej bedzie zrozumieć mechanikę działania.</p>
+                </p>
+                <form class="form">
+                    <label class="label">Wybierz p: 
+                        <select class="select" id="p">
+                            <option class="select__option">2</option>
+                            <option class="select__option">3</option>
+                            <option class="select__option">5</option>
+                            <option class="select__option">7</option>
+                            <option class="select__option">11</option>
+                            <option class="select__option">17</option>
+                            <option class="select__option">19</option>
+                            <option class="select__option">23</option>
+                        </select>
+                    </label>
+                    <label class="label">Wybierz q: 
+                        <select class="select" id="q">
+                            <option class="select__option">2</option>
+                            <option class="select__option">3</option>
+                            <option class="select__option">5</option>
+                            <option class="select__option">7</option>
+                            <option class="select__option">11</option>
+                            <option class="select__option">17</option>
+                            <option class="select__option">19</option>
+                            <option class="select__option">23</option>
+                        </select>
+                    </label>
+                </form>
+                <button class="button">Dalej</button>
+            </article>
+            
+        </section>
+        <script src="./script/hide.js"></script>
+        <script src="./script/szyfr.js"></script>
+    </div>
+</body>
+</html>

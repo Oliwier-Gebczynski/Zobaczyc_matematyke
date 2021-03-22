@@ -1,0 +1,94 @@
+.article{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5%;
+
+    &__title{
+        margin-left: 5%;
+        padding: 0 0 0 2%;
+        border-left: solid $darkBlue 3px;
+        color: $font;
+        font-weight: 700;
+    }
+
+    &__text{
+        padding: 5% 0 5% 5%;
+        width: 95%;
+        color: $darkFont;
+        font-weight: 500;
+        
+        &-span{
+            color: $darkBlue;
+            font-weight: 700;
+        }
+    }
+}
+
+.button{
+    display: block;
+    width: 70%;
+    padding: 2%;
+    margin: 0;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    background-color: transparent;
+    color: $lightBlue;
+    border: solid $lightBlue 1px;
+    outline: none;
+    border-radius: 5px;
+    transition: cubic-bezier(.13,.94,1,.79) .1s;
+
+    &:hover{
+        background-color: $lightBlue;
+        color: $bgcColor;
+        font-weight: 600;
+    }
+}
+
+@media (min-width: 800px)and(max-width: 1150px){
+    .article{
+        padding-bottom: 5%;
+        place-self: center;
+
+        &__title{
+            padding: 0 0 0 2%;
+            display: flex;
+            align-items: center;
+            font-size: 2rem;
+        }
+
+        &__text{
+                width: 90%;
+                padding: 0;
+                font-size: 1.1rem;
+                padding-top: 7%;
+                color: $darkFont;
+                font-weight: 500;
+        }
+    }
+}
+
+@media (min-width: 1150px){
+    .article{
+        place-self: center;
+        padding-bottom: 0%;
+        width: 75%;
+
+        &__title{
+            padding: 0 0 0 2%;
+            display: flex;
+            align-items: center;
+            font-size: 2rem;
+        }
+
+        &__text{
+                width: 90%;
+                padding: 0;
+                font-size: 1.1rem;
+                padding-top: 7%;
+                color: $darkFont;
+                font-weight: 500;
+        }
+    }
+}

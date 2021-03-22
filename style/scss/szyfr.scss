@@ -1,0 +1,73 @@
+@import "./variables/fontFamily";
+@import "./variables/colors";
+@import "./keyframes/keyframes";
+@import "./components/header";
+@import "./components/hideDisplay";
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family:'Raleway', sans-serif;
+}
+
+.container{
+    background-color: $bgcColor;
+    height: 100%;
+    padding-bottom: 5%;
+}
+
+.info{
+    padding-top: 20%;
+
+}
+
+.article{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5%;
+
+    &__title{
+        margin-left: 5%;
+        padding: 0 0 0 2%;
+        border-left: solid $darkBlue 3px;
+        color: $font;
+        font-weight: 700;
+    }
+
+    &__text{
+        padding: 5% 0 5% 5%;
+        width: 95%;
+        color: $darkFont;
+        font-weight: 500;
+        
+        &-span{
+            color: $darkBlue;
+            font-weight: 700;
+        }
+    }
+}
+
+.form{
+    display: flex;
+    justify-content: space-around;
+}
+
+.label{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    color: $font;
+    
+}
+
+.select{
+    background-color: $darkBlue;
+    outline: none;
+    border: none;
+    width: 25%;
+    margin-left: 5%;
+
+}

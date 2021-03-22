@@ -3,6 +3,7 @@
 @import "./keyframes/keyframes";
 @import "./components/header";
 @import "./components/hideDisplay";
+@import "./components/article";
 
 *{
     margin: 0;
@@ -30,32 +31,6 @@
         margin: auto;
         border-radius: 5px;
         padding-bottom: 10%;
-}
-
-.article{
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 5%;
-
-    &__title{
-        margin-left: 5%;
-        padding: 0 0 0 2%;
-        border-left: solid $darkBlue 3px;
-        color: $font;
-        font-weight: 700;
-    }
-
-    &__text{
-        padding: 5% 0 5% 5%;
-        width: 95%;
-        color: $darkFont;
-        font-weight: 500;
-        
-        &-span{
-            color: $darkBlue;
-            font-weight: 700;
-        }
-    }
 }
 
 .button{
