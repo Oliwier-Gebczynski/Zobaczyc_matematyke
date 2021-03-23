@@ -232,8 +232,8 @@
 
 .container {
   background-color: #353941;
-  height: 100vh;
-  padding-bottom: 5%;
+  min-height: 100vh;
+  padding-bottom: 20%;
 }
 
 .article {
@@ -291,13 +291,13 @@
 .button-left {
   position: absolute;
   left: 5%;
-  bottom: 5%;
+  bottom: 10px;
 }
 
 .button-right {
   position: absolute;
   right: 5%;
-  bottom: 5%;
+  bottom: 10px;
 }
 
 .info {
