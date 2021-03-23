@@ -60,16 +60,40 @@
                     <p class="article__text" id="firstText">Klucz publiczny składa się z <span class="article__text-span">n</span> i <span class="article__text-span">e</span>. "n" wyznaczyliśmy w poprzednim kroku i wynosi <span class="article__text-span">n = 33</p>
                     <p class="article__text">"e" jest liczbą mieszczącą się w zakresie: </p>
                     <p class="article__text--calc">1 < e <  φ(n)</p>
-                    <p class="article__text">"e" w praktyce jest równe <span class="article__text-span">65 537</span>, ponieważ użycie większej liczby wiąże się z spadkiem wydajności. Nie musi być to liczba losowa, bo jest udostępniana każdemu. <br> Wyznaczmy nasze <span class="article__text-span">e</span>:</p>
-                    <p class="article__text--calc">1 < e <  20, e ∈ (1 , 20), e = 4</p>
+                    <p class="article__text">"e" w praktyce jest równe <span class="article__text-span">65 537</span>, ponieważ użycie większej liczby wiąże się z spadkiem wydajności. Nie musi być to liczba losowa, bo jest udostępniana każdemu. Musi to być liczba względznie pierwsza<br> Wyznaczmy nasze <span class="article__text-span">e</span>:</p>
+                    <p class="article__text--calc">1 < e <  20, e ∈ (1 , 20), e = 7</p>
                     <p class="article__text">Gdy mamy już <span class="article__text-span">n</span> i <span class="article__text-span">e</span> możemy zapisać swój klucz publiczny.</p>
-                    <p class="article__text--calc">Klucz publiczy (n , e) = (33, 4) </p>
+                    <p class="article__text--calc">Klucz publiczy (e , n) = (7, 33) </p>
                 </article>
             </section>
             <section class="publicEncry">
                 <article class="article">
                     <h3 class="article__title">Szyfrowanie kluczem publicznym</h3>
-                    <p class="article__text"></p>
+                    <p class="article__text">Przed samym szyfrowaniem należy powiedzieć <span class="article__text-span">"w jaki sposób zaszyfrować tekst?".</span></p>
+                    <p class="article__text">Używamy do tego tablicy <a href="https://pl.wikipedia.org/wiki/ASCII " target="_blank">ASCII</a> , gdzie każdy znak ma swoją liczbę. My na potrzeby nauki wybierzemy mniejszą liczbę. Przyjmijmy że chcemy zakodować literę "d". Jest ona czwarta w alfabecie więc d = 4.</p>
+                    <p class="article__text">Gdy mamy już wszystkie dane wprowadźmy wzór: </p>
+                    <p class="article__text--calc"> zaszyfrowana wiadomość = m^e (mod n)</p>
+                    <p class="article__text">Możecie zapytać czym jest<span class="article__text-span"> "mod" (modulo)</span>. Jest to operacja która zwraca resztę z dzielenia. Często używa się tej operacji w programowaniu żeby sprawdzić czy liczba jest przysta.</p>
+                    <p class="article__text--calc"> 5 mod 2 = 1 // nie jest parzysta</p>
+                    <p class="article__text--calc"> 4 mod 2 = 0 // jest parzysta</p>
+                    <p class="article__text">Jak już wiemy w jaki sposób rozwiązać zadanie podstawmy nasze dane <br> ( m - wiadomość którą chcemy zaszyfrować [d=4]): </p>
+                    <p class="article__text--calc"> zaszyfrowana wiadomość = 4^4 mod 33 </p>
+                    <p class="article__text--calc"> = 16 mod 33 = 16 </p>
+                    <p class="article__text">Naszą zaszyfrowaną wiadomością jest <span class="article__text-span">16</span>. </p>
+                </article>
+            </section>
+            <section class="privKey">
+                <article class="article">
+                    <h3 class="article__title">Generowanie klucza prywatnego</h3>
+                    <p class="article__text">To bedzie jeden z najtrudniejszych momentów. Wzór znajduje sie poniżej: </p>
+                    <p class="article__text--calc"> d x e mod φ(n) = 1 </p>
+                    <p class="article__text">Takie równanie oblicza się <a href="https://eduinf.waw.pl/inf/alg/001_search/0009.php" target="_blank">rozszerzonym algorytmem Euklidesa</a>. Za pomocą tego algorytmu wyszukujemy odwrotności modulo. My zrobimy to przez podstawianie.</p>
+                    <p class="article__text--calc"> 1. d x 7 mod 20 = 1 </p>
+                    <p class="article__text--calc"> 2) 1 x 7 = 7 mod 20 = 7 </p>
+                    <p class="article__text--calc"> 3) 2 x 7 = 14 mod 20 = 14 </p>
+                    <p class="article__text--calc"> 3) 3 x 7 = 21 mod 20 = 1 </p>
+                    <p class="article__text">Mieliśmy dosyć łatwy przykład i szybko odnaleźliśmy nasze d = 3.</p>
+                    <p class="article__text">Klucz prywatny składa się z <span class="article__text-span"> ( d, n ) = ( 3 , 33)</span></p>
                 </article>
             </section>
             <div class="buttons">
