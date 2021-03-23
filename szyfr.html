@@ -22,24 +22,63 @@
                 </ul>
             </nav>
         </header>
-        <section class="info">
-            <article class="article" id="firstArticle">
-                <h3 class="article__title">Funkcja zapadni</h3>
-                <p class="article__text">Algorytm jest łatwy do obliczenia w jednym kierunku, ale prawie niemożliwy do obliczenia w odwrotnej kolejności. RSA wykorzystywane są liczby o długości <span class="article__text-span">617cyfr (2048 bit)</span>, przez co nie jesteśmy w stanie rozszyfrować wiadomości bez <span class="article__text-span">klucza prywatnego</span>. </p>
-            </article>
+        <main class="main">
+            <section class="info">
+                <article class="article">
+                    <h3 class="article__title">Funkcja zapadni</h3>
+                    <p class="article__text">Algorytm jest łatwy do obliczenia w jednym kierunku, ale prawie niemożliwy do obliczenia w odwrotnej kolejności. RSA wykorzystywane są liczby o długości <span class="article__text-span">617cyfr (2048 bit)</span>, przez co nie jesteśmy w stanie rozszyfrować wiadomości bez <span class="article__text-span">klucza prywatnego</span>. </p>
+                </article>
 
-            <article class="article" id="secondArticle">
-                <h3 class="article__title">Generowanie liczb pierwszych</h3>
-                <p class="article__text" id="firstText">Generownie klucza zaczyna się od wybrania liczb pierwszych <span>p</span> i <span>q</span>. Muszą one być bardzo duże, a także jak najdalej od siebie. Gdy liczby są małe lub blisko siebie łatwiej je złamać.<br><br>
-                Na naszę potrzeby wybierzemy małe liczby. Łatwiej bedzie zrozumieć mechanikę działania.</p>
-                </p>
-            </article>
-            <p class="article__title">p = <span >3</span><br>q = <span>11</span></p>
-        </section>
-        <input class="button-left" id="btnBefore" value="Wcześniej" type="button">  
-        <input class="button-right" id="btnNext" value="Dalej" type="button">
-        <script src="./script/hide.js"></script>
-        <script src="./script/szyfr.js"></script>
+                <article class="article">
+                    <h3 class="article__title">Generowanie liczb pierwszych</h3>
+                    <p class="article__text" id="firstText">Generownie klucza zaczyna się od wybrania liczb pierwszych <span>p</span> i <span>q</span>. Muszą one być bardzo duże, a także jak najdalej od siebie. Gdy liczby są małe lub blisko siebie łatwiej je złamać.<br><br>
+                    Na naszę potrzeby wybierzemy małe liczby. Łatwiej bedzie zrozumieć mechanikę działania.</p>
+                    </p>
+                </article>
+                <p class="article__title">p = <span >3</span><br>q = <span>11</span></p>
+            </section>
+            <section class="totient">
+                <article class="article">
+                    <h3 class="article__title">Funkcja Eulera</h3>
+                    <p class="article__text">Za pomocą tej funkcji jesteśmy w stanie sprawdzić tak zwaną  <span class="article__text-span">"rozbijalność"</span> liczby. Polega to na wskazaniu liczb calkowitych mniejszych od <span class="article__text-span">n</span> lub równych <span class="article__text-span">n</span> nie mających z nią wspólnych dzielników.</p>
+                    <p class="article__text--calc"> Naszym <span class="article__text-span">n</span> jest iloczyn p = 3 i q = 11. <br> <span class="article__text-span">3*11 = 33</span></p>
+                    <p class="article__text"> Zauważono ciekawą zależnośc. Ogólnie funkcja Eulera jest ciężka do obliczenia oprócz dla liczb pierwszych. Na wykresie poniżej ukazuje się wykres tej funkcji od 0 do 1000. Zaznaczona linia składa się z liczb pierwszych.</p>
+                    <img src="./style/resources/JPG/wykres.png" class="article__img">
+                    <p class="article__text">Wartość φ dla liczby pierwszych wygląda:  </p>
+                    <p class="article__text--calc"> φ(p) = p - 1</p>
+                    <p class="article__text">Weźmy na przykład liczbę 7.</p>
+                    <p class="article__text--calc"> φ(7) = 1 , 2, 3, 4, 5, 6, <span class="article__text-span">7</span> = 6 </p>
+                    <p class="article__text">Teraz obliczmy to za pomocą skróconego wzoru.</p>
+                    <p class="article__text--calc"> φ(7) = (7-1)  = 6 </p>
+                    <p class="article__text">Gdy już wiemy na czym polega funkcja Eulera, użyjmy jej dla naszego <span class="article__text-span">n</span> </p>
+                    <p class="article__text--calc"> φ(n = 33) = (3-1) x (11-1) = 2 x 10 =  <span class="article__text-span">20</span></p>
+                </article>
+            </section>
+            <section class="public">
+                <article class="article">
+                    <h3 class="article__title">Klucz prywatny</h3>
+                    <p class="article__text" id="firstText">Klucz publiczny składa się z <span class="article__text-span">n</span> i <span class="article__text-span">e</span>. "n" wyznaczyliśmy w poprzednim kroku i wynosi <span class="article__text-span">n = 33</p>
+                    <p class="article__text">"e" jest liczbą mieszczącą się w zakresie: </p>
+                    <p class="article__text--calc">1 < e <  φ(n)</p>
+                    <p class="article__text">"e" w praktyce jest równe <span class="article__text-span">65 537</span>, ponieważ użycie większej liczby wiąże się z spadkiem wydajności. Nie musi być to liczba losowa, bo jest udostępniana każdemu. <br> Wyznaczmy nasze <span class="article__text-span">e</span>:</p>
+                    <p class="article__text--calc">1 < e <  20, e ∈ (1 , 20), e = 4</p>
+                    <p class="article__text">Gdy mamy już <span class="article__text-span">n</span> i <span class="article__text-span">e</span> możemy zapisać swój klucz publiczny.</p>
+                    <p class="article__text--calc">Klucz publiczy (n , e) = (33, 4) </p>
+                </article>
+            </section>
+            <section class="publicEncry">
+                <article class="article">
+                    <h3 class="article__title">Szyfrowanie kluczem publicznym</h3>
+                    <p class="article__text"></p>
+                </article>
+            </section>
+            <div class="buttons">
+                <input class="button-left" id="btnBefore" value="Wcześniej" type="button">  
+                <input class="button-right" id="btnNext" value="Dalej" type="button">
+            </div>
+        </main>
     </div>
+    <script src="./script/hide.js"></script>
+    <script src="./script/szyfr.js"></script>
 </body>
 </html>
