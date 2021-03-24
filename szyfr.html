@@ -31,8 +31,8 @@
 
                 <article class="article">
                     <h3 class="article__title">Generowanie liczb pierwszych</h3>
-                    <p class="article__text" id="firstText">Generownie klucza zaczyna się od wybrania liczb pierwszych <span>p</span> i <span>q</span>. Muszą one być bardzo duże, a także jak najdalej od siebie. Gdy liczby są małe lub blisko siebie łatwiej je złamać.<br><br>
-                    Na naszę potrzeby wybierzemy małe liczby. Łatwiej bedzie zrozumieć mechanikę działania.</p>
+                    <p class="article__text" id="firstText">Generowanie klucza zaczyna się od wybrania liczb pierwszych <span class="article__text-span">p</span> i <span class="article__text-span">q</span>. Muszą one być bardzo duże, a także jak najdalej od siebie. Gdy liczby są małe lub blisko siebie łatwiej je złamać.<br><br>
+                    Na nasze potrzeby wybierzemy małe liczby. Łatwiej będzie zrozumieć mechanikę działania.</p>
                     </p>
                 </article>
                 <p class="article__text--calc">p = <span >3</span><br>q = <span>11</span></p>
@@ -40,9 +40,9 @@
             <section class="totient">
                 <article class="article">
                     <h3 class="article__title">Funkcja Eulera</h3>
-                    <p class="article__text">Za pomocą tej funkcji jesteśmy w stanie sprawdzić tak zwaną  <span class="article__text-span">"rozbijalność"</span> liczby. Polega to na wskazaniu liczb calkowitych mniejszych od <span class="article__text-span">n</span> lub równych <span class="article__text-span">n</span> nie mających z nią wspólnych dzielników.</p>
+                    <p class="article__text">Za pomocą tej funkcji jesteśmy w stanie sprawdzić tak zwaną  <span class="article__text-span">"rozbijalność"</span> liczby. Polega to na wskazaniu liczb całkowitych mniejszych od <span class="article__text-span">n</span> lub równych <span class="article__text-span">n</span> nie mających z nią wspólnych dzielników.</p>
                     <p class="article__text--calc"> Naszym <span class="article__text-span">n</span> jest iloczyn p = 3 i q = 11. <br> <span class="article__text-span">3*11 = 33</span></p>
-                    <p class="article__text"> Zauważono ciekawą zależnośc. Ogólnie funkcja Eulera jest ciężka do obliczenia oprócz dla liczb pierwszych. Na wykresie poniżej ukazuje się wykres tej funkcji od 0 do 1000. Zaznaczona linia składa się z liczb pierwszych.</p>
+                    <p class="article__text"> Zauważono ciekawą zależność. Ogólnie funkcja Eulera jest ciężka do obliczenia oprócz dla liczb pierwszych. Na wykresie poniżej ukazuje się wykres tej funkcji od 0 do 1000. Zaznaczona linia składa się z liczb pierwszych.</p>
                     <img src="./style/resources/JPG/wykres.png" class="article__img">
                     <p class="article__text">Wartość φ dla liczby pierwszych wygląda:  </p>
                     <p class="article__text--calc"> φ(p) = p - 1</p>
@@ -60,7 +60,7 @@
                     <p class="article__text" id="firstText">Klucz publiczny składa się z <span class="article__text-span">n</span> i <span class="article__text-span">e</span>. "n" wyznaczyliśmy w poprzednim kroku i wynosi <span class="article__text-span">n = 33</p>
                     <p class="article__text">"e" jest liczbą mieszczącą się w zakresie: </p>
                     <p class="article__text--calc">1 < e <  φ(n)</p>
-                    <p class="article__text">"e" w praktyce jest równe <span class="article__text-span">65 537</span>, ponieważ użycie większej liczby wiąże się z spadkiem wydajności. Nie musi być to liczba losowa, bo jest udostępniana każdemu. Musi to być liczba względznie pierwsza<br> Wyznaczmy nasze <span class="article__text-span">e</span>:</p>
+                    <p class="article__text">"e" w praktyce jest równe <span class="article__text-span">65 537</span>, ponieważ użycie większej liczby wiąże się z spadkiem wydajności. Nie musi być to liczba losowa, bo jest udostępniana każdemu. Musi to być liczba względnie pierwsza.<br> Wyznaczmy nasze <span class="article__text-span">e</span>:</p>
                     <p class="article__text--calc">1 < e <  20, e ∈ (1 , 20), e = 7</p>
                     <p class="article__text">Gdy mamy już <span class="article__text-span">n</span> i <span class="article__text-span">e</span> możemy zapisać swój klucz publiczny.</p>
                     <p class="article__text--calc">Klucz publiczy (e , n) = (7, 33) </p>
@@ -70,13 +70,13 @@
                 <article class="article">
                     <h3 class="article__title">Szyfrowanie kluczem publicznym</h3>
                     <p class="article__text">Przed samym szyfrowaniem należy powiedzieć <span class="article__text-span">"w jaki sposób zaszyfrować tekst?".</span></p>
-                    <p class="article__text">Używamy do tego tablicy <a href="https://pl.wikipedia.org/wiki/ASCII " target="_blank">ASCII</a> , gdzie każdy znak ma swoją liczbę. My na potrzeby nauki wybierzemy mniejszą liczbę. Przyjmijmy że chcemy zakodować literę "d". Jest ona czwarta w alfabecie więc d = 4.</p>
+                    <p class="article__text">Używamy do tego tablicy <a href="https://pl.wikipedia.org/wiki/ASCII " target="_blank">ASCII</a> , gdzie każdy znak ma swoją liczbę. My na potrzeby wytłumaczenia wybierzemy mniejszą liczbę. Przyjmijmy, że chcemy zakodować literę "d". Jest ona czwarta w alfabecie więc d = 4.</p>
                     <p class="article__text">Gdy mamy już wszystkie dane wprowadźmy wzór: </p>
                     <p class="article__text--calc"> zaszyfrowana wiadomość = m^e (mod n)</p>
-                    <p class="article__text">Możecie zapytać czym jest<span class="article__text-span"> "mod" (modulo)</span>. Jest to operacja która zwraca resztę z dzielenia. Często używa się tej operacji w programowaniu żeby sprawdzić czy liczba jest przysta.</p>
+                    <p class="article__text">Możecie zapytać czym jest<span class="article__text-span"> "mod" (modulo)</span>. Jest to operacja, która zwraca resztę z dzielenia. Często używa się tej operacji w programowaniu, żeby sprawdzić czy liczba jest parzysta.</p>
                     <p class="article__text--calc"> 5 mod 2 = 1 // nie jest parzysta</p>
                     <p class="article__text--calc"> 4 mod 2 = 0 // jest parzysta</p>
-                    <p class="article__text">Jak już wiemy w jaki sposób rozwiązać zadanie podstawmy nasze dane <br> ( m - wiadomość którą chcemy zaszyfrować [d=4]): </p>
+                    <p class="article__text">Jak już wiemy w jaki sposób rozwiązać zadanie podstawmy nasze dane <br> ( m - wiadomość, którą chcemy zaszyfrować [d=4]): </p>
                     <p class="article__text--calc"> zaszyfrowana wiadomość = 4^4 mod 33 </p>
                     <p class="article__text--calc"> = 16 mod 33 = 16 </p>
                     <p class="article__text">Naszą zaszyfrowaną wiadomością jest <span class="article__text-span">16</span>. </p>

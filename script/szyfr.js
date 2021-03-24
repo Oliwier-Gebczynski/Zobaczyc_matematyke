@@ -13,13 +13,16 @@ const slides = [firstArticle, secondArticle , thirdArticle, fourthArticle, fifth
 
 btnNext.addEventListener("click", function(){
     if((i >= 0) != (i == slides.length - 1)){
+        
         btnNext.disabled = false;
         btnPrev.disabled = false;
         i += 1;
     }
     else if(i == slides.length - 1){
         btnNext.disabled = true;
+        btnNext.style.display = "none";
     }
+    
     window.scrollTo(0, 0);
     showNext(i);
 
@@ -31,6 +34,7 @@ btnPrev.addEventListener("click", function(){
         btnPrev.disabled = true;
     }
     else if(i > 0){
+        btnNext.style.display = "block";
         btnPrev.disabled = false;
         btnNext.disabled = false;
         i -= 1;

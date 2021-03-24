@@ -16,7 +16,6 @@
 .container{
     background-color: $bgcColor;
     min-height: 100vh;
-    padding-bottom: 10%;
 }
 
 .main{
@@ -87,7 +86,7 @@
 }
 
 .buttons{
-    padding-top: 10%;
+    padding: 10% 0 5% 0;
     width: 100%;
     display: flex;
     justify-content: space-around;
