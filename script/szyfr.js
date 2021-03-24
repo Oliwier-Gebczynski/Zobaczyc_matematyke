@@ -1,12 +1,17 @@
 const btnPrev = document.querySelector("#btnBefore");
 const btnNext = document.querySelector("#btnNext");
 const firstArticle = document.querySelector(".info");
+const secondArticle = document.querySelector(".totient");
+const thirdArticle = document.querySelector(".public");
+const fourthArticle = document.querySelector(".publicEncry");
+const fifthArticle = document.querySelector(".privKey");
+const sixthArticle = document.querySelector(".decryption");
+
 let i = 0;
 
-const slides = [firstArticle,2 ,2, ,2, 2, ,2 ,2, 2];
+const slides = [firstArticle, secondArticle , thirdArticle, fourthArticle, fifthArticle, sixthArticle];
 
 btnNext.addEventListener("click", function(){
-
     if((i >= 0) != (i == slides.length - 1)){
         btnNext.disabled = false;
         btnPrev.disabled = false;
@@ -15,9 +20,9 @@ btnNext.addEventListener("click", function(){
     else if(i == slides.length - 1){
         btnNext.disabled = true;
     }
+    window.scrollTo(0, 0);
+    showNext(i);
 
-    console.log(i)
-    //showNext(i);
 })
 
 //done
@@ -30,13 +35,20 @@ btnPrev.addEventListener("click", function(){
         btnNext.disabled = false;
         i -= 1;
     }
-    console.log(i)
-    //show(i);
+    window.scrollTo(0, 0);
+    showPrev(i);
 })
 
 function showNext(index){
     const display = slides[i];
     const minusDisplay = slides[i - 1];
+    minusDisplay.style.display = "none";
+    display.style.display = "flex";
+}
+
+function showPrev(index){
+    const display = slides[i];
+    const minusDisplay = slides[i + 1];
     minusDisplay.style.display = "none";
     display.style.display = "flex";
 }

@@ -35,7 +35,7 @@
                     Na naszę potrzeby wybierzemy małe liczby. Łatwiej bedzie zrozumieć mechanikę działania.</p>
                     </p>
                 </article>
-                <p class="article__title">p = <span >3</span><br>q = <span>11</span></p>
+                <p class="article__text--calc">p = <span >3</span><br>q = <span>11</span></p>
             </section>
             <section class="totient">
                 <article class="article">
@@ -94,6 +94,20 @@
                     <p class="article__text--calc"> 3) 3 x 7 = 21 mod 20 = 1 </p>
                     <p class="article__text">Mieliśmy dosyć łatwy przykład i szybko odnaleźliśmy nasze d = 3.</p>
                     <p class="article__text">Klucz prywatny składa się z <span class="article__text-span"> ( d, n ) = ( 3 , 33)</span></p>
+                </article>
+            </section>
+            <section class="decryption">
+                <article class="article decryptionArticle">
+                    <h3 class="article__title">Deszyfrowanie wiadomości</h3>
+                    <p class="article__text"> Gdy mamy już klucz prywatny, klucz publiczny i zaszyfrowaną wiadomość zostało nam sprawdzić deszyfrację.</p>
+                    <p class="article__text"> Jest to już bardzo łatwy krok. Wystarczy podstawić dane: </p>
+                    <p class="article__text--calc"> odszyfrowana wiadomość = c^d  mod n</p>
+                    <p class="article__text"> c = 16 ( zaszyfrowana wiadomość ), klucz prywatny (d = 3, n = 33)</p>
+                    <p class="article__text--calc">1) odszyfrowana wiadomość = 16^3  mod 33</p>
+                    <p class="article__text--calc">2) odszyfrowana wiadomość = 4096 mod 33</p>
+                    <p class="article__text--calc">3) odszyfrowana wiadomość = <span class="article__text-span"> 4</span></p>
+                    <p class="article__text">W naszym przypadku przyjeliśmy że d = 4 i udało nam się odszyfrować wiadomość.</p>
+                    <a class="button">Podsumowanie</a>
                 </article>
             </section>
             <div class="buttons">

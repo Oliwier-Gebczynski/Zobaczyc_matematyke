@@ -233,7 +233,7 @@
 .container {
   background-color: #353941;
   min-height: 100vh;
-  padding-bottom: 20%;
+  padding-bottom: 10%;
 }
 
 .main {
@@ -247,6 +247,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 100px;
 }
 
 .article {
@@ -266,6 +270,8 @@
   border-left: solid #5f85db 3px;
   color: #e0e0e0;
   font-weight: 700;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
 
 .article__text {
@@ -273,11 +279,16 @@
   width: 95%;
   color: #b1b1b1;
   font-weight: 500;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
 
 .article__text--calc {
   text-align: center;
   color: #e0e0e0;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .article__text-span {
@@ -321,8 +332,34 @@
       justify-content: space-around;
 }
 
+.button {
+  display: block;
+  width: 70%;
+  padding: 2%;
+  margin: 0;
+  font-size: 15px;
+  text-align: center;
+  text-decoration: none;
+  background-color: transparent;
+  color: #90b8f8;
+  border: solid #90b8f8 1px;
+  outline: none;
+  border-radius: 5px;
+  -webkit-transition: cubic-bezier(0.13, 0.94, 1, 0.79) 0.1s;
+  transition: cubic-bezier(0.13, 0.94, 1, 0.79) 0.1s;
+}
+
+.button:hover {
+  background-color: #90b8f8;
+  color: #353941;
+  font-weight: 600;
+}
+
+.totient, .public, .publicEncry, .privKey, .decryption {
+  display: none;
+}
+
 .info {
-  padding-top: 70px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -362,4 +399,42 @@
   margin-left: 5%;
   color: #e0e0e0;
   text-align: center;
+}
+
+.decryptionArticle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 800px) and (max-width: 1150px) {
+  .main {
+    margin: auto;
+    width: 65%;
+    padding-top: 150px;
+  }
+}
+
+@media (min-width: 1150px) {
+  .main {
+    margin: auto;
+    width: 50%;
+    padding-top: 150px;
+  }
+  .article__title {
+    font-size: 25px;
+  }
+  .article__text {
+    font-size: 20px;
+  }
+  .article__text--calc {
+    font-size: 20px;
+  }
 }

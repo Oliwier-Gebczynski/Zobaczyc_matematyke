@@ -16,13 +16,15 @@
 .container{
     background-color: $bgcColor;
     min-height: 100vh;
-    padding-bottom: 20%;
+    padding-bottom: 10%;
 }
 
 .main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    padding-top: 100px;
 }
 
 .article{
@@ -36,6 +38,7 @@
         border-left: solid $darkBlue 3px;
         color: $font;
         font-weight: 700;
+        align-self: flex-start;
     }
 
     &__text{
@@ -43,10 +46,12 @@
         width: 95%;
         color: $darkFont;
         font-weight: 500;
+        align-self: flex-start;
 
         &--calc{
             text-align: center;
             color: $font;
+            align-self: center;
         }
         
         &-span{
@@ -88,10 +93,34 @@
     justify-content: space-around;
 }
 
+.button{
+    display: block;
+    width: 70%;
+    padding: 2%;
+    margin: 0;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    background-color: transparent;
+    color: $lightBlue;
+    border: solid $lightBlue 1px;
+    outline: none;
+    border-radius: 5px;
+    transition: cubic-bezier(.13,.94,1,.79) .1s;
+
+    &:hover{
+        background-color: $lightBlue;
+        color: $bgcColor;
+        font-weight: 600;
+    }
+}
+
+.totient, .public, .publicEncry, .privKey, .decryption{
+    display: none;
+}
 //info
 
 .info{
-    padding-top: 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -118,4 +147,42 @@
     margin-left: 5%;
     color: $font;
     text-align: center;
+}
+
+//decryption
+.decryptionArticle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 800px)and(max-width: 1150px){
+    .main{
+        margin: auto;
+        width: 65%;
+        padding-top: 150px;
+    }
+}
+
+@media (min-width: 1150px){
+    .main{
+        margin: auto;
+        width: 50%;
+        padding-top: 150px;
+    }
+
+    .article{
+        
+        &__title{
+            font-size: 25px;
+        }
+
+        &__text{
+            font-size: 20px;
+
+            &--calc{
+                font-size: 20px;
+            }
+        }
+    }
 }
