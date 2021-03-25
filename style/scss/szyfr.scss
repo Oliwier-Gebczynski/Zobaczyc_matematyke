@@ -3,6 +3,7 @@
 @import "./keyframes/keyframes";
 @import "./components/header";
 @import "./components/hideDisplay";
+@import "./components/secondArticle";
 
 //main
 *{
@@ -16,53 +17,6 @@
 .container{
     background-color: $bgcColor;
     min-height: 100vh;
-}
-
-.main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 100px;
-}
-
-.article{
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 5%;
-
-    &__title{
-        margin-left: 5%;
-        padding: 0 0 0 2%;
-        border-left: solid $darkBlue 3px;
-        color: $font;
-        font-weight: 700;
-        align-self: flex-start;
-    }
-
-    &__text{
-        padding: 5% 0 5% 5%;
-        width: 95%;
-        color: $darkFont;
-        font-weight: 500;
-        align-self: flex-start;
-
-        &--calc{
-            text-align: center;
-            color: $font;
-            align-self: center;
-        }
-        
-        &-span{
-            color: $darkBlue;
-            font-weight: 700;
-        }
-    }
-
-    &__img{
-        margin: 5% 0 5% 0;
-        width: 100%;
-    }
 }
 
 .button-left, .button-right{
@@ -83,6 +37,10 @@
             color: $bgcColor;
             font-weight: 600;
         }
+}
+
+.button-left{
+    display: none;
 }
 
 .buttons{
@@ -153,35 +111,4 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-@media (min-width: 800px)and(max-width: 1150px){
-    .main{
-        margin: auto;
-        width: 65%;
-        padding-top: 150px;
-    }
-}
-
-@media (min-width: 1150px){
-    .main{
-        margin: auto;
-        width: 50%;
-        padding-top: 150px;
-    }
-
-    .article{
-        
-        &__title{
-            font-size: 25px;
-        }
-
-        &__text{
-            font-size: 20px;
-
-            &--calc{
-                font-size: 20px;
-            }
-        }
-    }
 }

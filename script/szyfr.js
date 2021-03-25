@@ -13,21 +13,17 @@ const slides = [firstArticle, secondArticle , thirdArticle, fourthArticle, fifth
 
 btnNext.addEventListener("click", function(){
     if((i >= 0) != (i == slides.length - 1)){
-        
         btnNext.disabled = false;
         btnPrev.disabled = false;
+        btnPrev.style.display = "block";
         i += 1;
     }
     else if(i == slides.length - 1){
         btnNext.disabled = true;
-        btnNext.style.display = "none";
     }
-    
     window.scrollTo(0, 0);
     showNext(i);
-
 })
-
 //done
 btnPrev.addEventListener("click", function(){
     if(i == 0){
@@ -48,6 +44,9 @@ function showNext(index){
     const minusDisplay = slides[i - 1];
     minusDisplay.style.display = "none";
     display.style.display = "flex";
+    if(slides.length - 1 == i){
+        btnNext.style.display = "none";
+    }
 }
 
 function showPrev(index){
@@ -55,5 +54,8 @@ function showPrev(index){
     const minusDisplay = slides[i + 1];
     minusDisplay.style.display = "none";
     display.style.display = "flex";
+    if(0 == i){
+        btnPrev.style.display = "none";
+    }
 }
 

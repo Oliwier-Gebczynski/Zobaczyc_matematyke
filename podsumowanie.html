@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Oliwier Gębczyński 2021">
+    <link rel="stylesheet" href="./style/scss/podsumowanie.css">
+    <title>Szyfrowanie RSA</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <button class="header__button" id="navButton">⚙️</button>
+            <div class="header__line"></div>
+            <nav class="nav" id="nav">
+                <ul class="list">
+                    <li class="list__element"><a href="./index.html" class="list__element-link">STRONA GŁÓWNA</a></li>
+                    <li class="list__element"><a href="./what.html" class="list__element-link">CZYM JEST RSA?</a></li>
+                    <li class="list__element"><a href="./szyfr.html" class="list__element-link">JAK ZASZYFROWAĆ WIADOMOŚĆ?</a></li>
+                    <li class="list__element"><a href="./podsumowanie.html" class="list__element-link">PODSUMOWANIE</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="main">
+            <article class="article">
+                <h3 class="article__title">Czy liczby pierwsze są przypadkowe?</h3>
+                <p class="article__text">Często podczas obliczania mieliśmy styczność z liczbami pierwszymi. Są one kluczowym elementem, ponieważ cała trudność polega na <span>faktoryzacji</span> iloczynu dwóch dużych liczb pierwszych. </p>
+            </article>
+            <article class="article">
+                <h3 class="article__title">Szyfrowanie hybrydowe</h3>
+                <p class="article__text">RSA ma ograniczony maksymalny rozmiar zaszyfrowanej wiadomości. Używając klucza 2048-bit maksymalny rozmiar zaszyfrowanej wiadomości może mieć 256 bajtów danych. Łączy się szyfrowanie symetryczne z asymetrycznym, żeby zwiększyć ilość danych. Krok po kroku wyjaśnię szyfrowanie hybrydowe: 
+                </p>
+                <p class="article__text--calc"> 1) Szyfrowanie symetryczne danych, jednym tajnym kluczem </p>
+                <p class="article__text--calc"> 2) Szyfrowanie tajnego klucza, kluczem publicznym odbiorcy </p>
+                <p class="article__text--calc"> 3) Przesłanie danych </p>
+                <p class="article__text--calc"> 4) Odszyfrowanie klucza tajnego i odszyfrowanie nim wiadomości </p>
+                <p class="article__text">Przez małą pojemność RSA szyfruję się tajny klucz algorytmów symetrycznych. Łączy się tu pojemność szyfrowania symetrycznego, oraz bezpieczność szyfrowania asymetrycznego.
+                </p>
+
+            </article>
+        </main>
+    </div>
+    
+</body>
+</html>

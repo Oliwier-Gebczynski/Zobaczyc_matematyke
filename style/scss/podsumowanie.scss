@@ -1,0 +1,19 @@
+@import "./variables/fontFamily";
+@import "./variables/colors";
+@import "./keyframes/keyframes";
+@import "./components/header";
+@import "./components/hideDisplay";
+@import "./components/secondArticle";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family:'Raleway', sans-serif;
+}
+
+.container{
+    background-color: $bgcColor;
+    min-height: 100vh;
+}
