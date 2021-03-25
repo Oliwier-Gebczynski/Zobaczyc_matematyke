@@ -17,3 +17,53 @@
     background-color: $bgcColor;
     min-height: 100vh;
 }
+
+.footer{
+    background-color: $darkBlue;
+    padding: 5% 5% 10% 5%;
+
+    &__title{
+        font-size: 40px;
+        color: $bgcColor;
+    }
+}
+
+.record{
+    padding-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style: none;
+
+    &__link{
+        padding: 2% 0 2% 0;
+        &-item{
+            color: $font;
+            font-size: 17px;
+            font-weight: 600;
+
+            &--title{
+                font-size: 20px;
+                font-weight: 700;
+                color: $bgcColor;
+            }
+
+            &:visited{
+                color: $font;
+            }
+        }
+    }
+}
+
+@media (min-width: 800px){
+    .footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 2% 5% 5% 5%;
+    }
+
+    .record{
+        align-items: flex-end;
+    }
+}

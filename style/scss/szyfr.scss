@@ -44,7 +44,7 @@
 }
 
 .buttons{
-    padding: 10% 0 5% 0;
+    padding: 5% 0 5% 0;
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -74,6 +74,10 @@
 
 .totient, .public, .publicEncry, .privKey, .decryption{
     display: none;
+}
+
+.link{
+    color: $darkBlue;
 }
 //info
 

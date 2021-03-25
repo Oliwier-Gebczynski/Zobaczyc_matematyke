@@ -274,6 +274,7 @@
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  padding-bottom: 2%;
 }
 
 .article__text-span {
@@ -351,7 +352,7 @@
 }
 
 .buttons {
-  padding: 10% 0 5% 0;
+  padding: 5% 0 5% 0;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -385,6 +386,10 @@
 
 .totient, .public, .publicEncry, .privKey, .decryption {
   display: none;
+}
+
+.link {
+  color: #5f85db;
 }
 
 .info {
