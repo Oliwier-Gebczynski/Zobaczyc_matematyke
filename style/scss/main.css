@@ -69,6 +69,8 @@
 .header {
   width: 100%;
   z-index: 1000;
+  position: absolute;
+  top: 10px;
 }
 
 .header__line {
@@ -245,7 +247,7 @@
   background-color: #353941;
   overflow: hidden;
   background-image: url(../resources/SVG/bgc.svg);
-  background-position: bottom right;
+  background-position: 100% 100%;
   background-repeat: no-repeat;
   background-size: 375px;
 }
