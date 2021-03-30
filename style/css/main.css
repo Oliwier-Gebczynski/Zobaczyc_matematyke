@@ -28,6 +28,27 @@
   }
 }
 
+@keyframes sliderIn {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes sliderOut {
+  0% {
+    opacity: 0;
+    display: 0;
+  }
+  100% {
+    opacity: 1;
+    display: flex;
+  }
+}
+
 .header {
   width: 100%;
   height: 50vh;

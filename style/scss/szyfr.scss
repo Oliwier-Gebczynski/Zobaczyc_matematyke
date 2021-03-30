@@ -74,6 +74,7 @@
 
 .totient, .public, .publicEncry, .privKey, .decryption{
     display: none;
+    animation: none;
 }
 
 .link{
@@ -85,6 +86,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    animation: none;
 }
 
 .form{

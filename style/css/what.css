@@ -28,6 +28,27 @@
   }
 }
 
+@keyframes sliderIn {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes sliderOut {
+  0% {
+    opacity: 0;
+    display: 0;
+  }
+  100% {
+    opacity: 1;
+    display: flex;
+  }
+}
+
 .header {
   width: 100%;
   height: 50vh;
@@ -202,8 +223,8 @@
 
 @media (min-width: 800px) and (max-width: 1150px) {
   .article {
+    width: 80%;
     padding-bottom: 5%;
-    place-self: center;
   }
   .article__title {
     padding: 0 0 0 2%;
@@ -218,19 +239,21 @@
     padding-top: 7%;
     color: #b1b1b1;
     font-weight: 500;
+  }
+  .third, .fourth {
+    width: 60%;
   }
 }
 
 @media (min-width: 1150px) {
   .article {
-    place-self: center;
-    padding-bottom: 0%;
-    width: 75%;
+    display: flex;
+    width: 50%;
+    justify-content: flex-start;
   }
   .article__title {
-    padding: 0 0 0 2%;
-    display: flex;
-    align-items: center;
+    width: auto;
+    margin: 0;
     font-size: 2rem;
   }
   .article__text {
@@ -240,6 +263,9 @@
     padding-top: 7%;
     color: #b1b1b1;
     font-weight: 500;
+  }
+  .third, .fourth {
+    width: 100%;
   }
 }
 
@@ -253,7 +279,7 @@
 
 .container {
   background-color: #353941;
-  height: 100%;
+  height: auto;
   padding-bottom: 5%;
 }
 
@@ -301,23 +327,31 @@
 
 @media (min-width: 800px) and (max-width: 1150px) {
   .main {
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr) 5%;
-    grid-template-areas: "first firstImg" "second secondImg" "third fourth" "button button";
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr) 5%;
+    grid-template-areas: "first" "second" "third" "fourth" "button";
     padding-top: 15%;
   }
-  .first {
+  .main__item--first {
     grid-area: first;
   }
-  .second {
+  .main__item--second {
     grid-area: second;
   }
-  .third {
+  .main__item--third {
     grid-area: third;
   }
-  .fourth {
+  .main__item--fourth {
     grid-area: fourth;
+  }
+  .main__item {
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 2% 0 2% 0;
   }
   .img--first {
     grid-area: firstImg;
@@ -332,24 +366,6 @@
     border-radius: 5px;
     margin: 0;
   }
-  .article {
-    padding-bottom: 5%;
-    place-self: center;
-  }
-  .article__title {
-    padding: 0 0 0 2%;
-    display: flex;
-    align-items: center;
-    font-size: 2rem;
-  }
-  .article__text {
-    width: 90%;
-    padding: 0;
-    font-size: 1.1rem;
-    padding-top: 7%;
-    color: #b1b1b1;
-    font-weight: 500;
-  }
   .button {
     grid-area: button;
     place-self: center;
@@ -359,39 +375,46 @@
 }
 
 @media (min-width: 1150px) {
+  .container {
+    display: flex;
+    justify-content: center;
+  }
   .main {
-    width: 100%;
-    margin: auto;
+    width: 70%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr) 5%;
-    grid-template-areas: "first first" "second second" "third third" "button button";
+    grid-template-areas: "first first" "second second" "third fourth" "button button";
     padding-top: 10%;
-    row-gap: 1%;
+  }
+  .main__item--first, .main__item--second, .main__item--third, .main__item--fourth {
+    align-self: center;
+    justify-self: start;
   }
   .main__item--first {
     grid-area: first;
-    place-self: center;
   }
   .main__item--second {
     grid-area: second;
-    place-self: center;
   }
   .main__item--third {
     grid-area: third;
-    align-self: start;
-    justify-self: center;
-    padding: 10% 0 2% 0;
+  }
+  .main__item--fourth {
+    grid-area: fourth;
   }
   .main__item {
     flex-direction: row;
-    width: 70%;
-    padding: 10% 0 5% 0;
+    justify-content: space-between;
+    width: 100%;
+    height: 65vh;
+    padding: 0;
   }
   .img--first {
     grid-area: firstImg;
     width: 30vw;
-    place-self: center;
+    align-self: center;
+    justify-self: end;
     margin: 0;
     padding-bottom: 0;
   }
@@ -402,25 +425,6 @@
     border-radius: 5px;
     margin: 0;
     padding-bottom: 0;
-  }
-  .article {
-    place-self: center;
-    padding-bottom: 0%;
-    width: 75%;
-  }
-  .article__title {
-    padding: 0 0 0 2%;
-    display: flex;
-    align-items: center;
-    font-size: 2.2rem;
-  }
-  .article__text {
-    width: 70%;
-    padding: 0;
-    font-size: 1.3rem;
-    padding-top: 7%;
-    color: #b1b1b1;
-    font-weight: 500;
   }
   .button {
     grid-area: button;

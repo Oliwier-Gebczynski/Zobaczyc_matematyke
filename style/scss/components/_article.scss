@@ -48,9 +48,9 @@
 
 @media (min-width: 800px)and(max-width: 1150px){
     .article{
+        width: 80%;
         padding-bottom: 5%;
-        place-self: center;
-
+        
         &__title{
             padding: 0 0 0 2%;
             display: flex;
@@ -66,19 +66,21 @@
                 color: $darkFont;
                 font-weight: 500;
         }
+    }
+    
+    .third,.fourth{
+        width: 60%;
     }
 }
 
 @media (min-width: 1150px){
     .article{
-        place-self: center;
-        padding-bottom: 0%;
-        width: 75%;
-
+        display: flex;
+        width: 50%;
+        justify-content: flex-start;
         &__title{
-            padding: 0 0 0 2%;
-            display: flex;
-            align-items: center;
+            width: auto;
+            margin: 0;
             font-size: 2rem;
         }
 
@@ -91,4 +93,11 @@
                 font-weight: 500;
         }
     }
+
+    .third,.fourth{
+        width: 100%;
+        
+    }
+
+    
 }
