@@ -1,7 +1,6 @@
 const nav = document.querySelector("#nav");
 const button = document.querySelector("#navButton");
 
-
 button.addEventListener("click", function(){
     if(nav.classList.contains("display")==false && nav.classList.contains("hide")==false ){
         nav.classList.add("display");
@@ -16,3 +15,4 @@ button.addEventListener("click", function(){
         return;
     } 
 })
+

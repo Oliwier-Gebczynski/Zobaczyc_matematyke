@@ -23,16 +23,20 @@
             </nav>
         </header>
         <main class="main">
-            <article class="article first">
-                <h2 class="article__title">Kto stworzył RSA?</h2>
-                <p class="article__text">Ronald Rivest, Adi Shamir i Leonard Adleman są twórcami algorytmu RSA. Opublikowali swoją pracę w 1977 roku. Nazwali ten algorytm od pierwszych liter swoich nazwisk. <span class="article__text-span">R</span>ivest , <span class="article__text-span">S</span>hamir, <span class="article__text-span">A</span>dleman</p>
-            </article>
-            <img class="img--first" src="./style/resources/JPG/RSA.jpg">
-            <article class="article second">
+            <section class="main__item main__item--first"> 
+                <article class="article first">
+                    <h2 class="article__title">Kto stworzył RSA?</h2>
+                    <p class="article__text">Ronald Rivest, Adi Shamir i Leonard Adleman są twórcami algorytmu RSA. Opublikowali swoją pracę w 1977 roku. Nazwali ten algorytm od pierwszych liter swoich nazwisk. <span class="article__text-span">R</span>ivest , <span class="article__text-span">S</span>hamir, <span class="article__text-span">A</span>dleman</p>
+                </article>
+                <img class="img--first" src="./style/resources/JPG/RSA.jpg">
+            </section>
+            <section class="main__item main__item--second"><article class="article second">
                 <h2 class="article__title">Czym jest RSA?</h2>
                 <p class="article__text">Jest to algorytm niesymetryczny, inaczej mówiąc taki który posiada dwa klucze, <span class="article__text-span">prywatny</span> i <span class="article__text-span">publiczny</span>. Cechuję się tym że za pomocą klucza publicznego możemy szyfrować dane, a za pomocą klucza prywatnego je odszyfrowywać.</p>
             </article>
             <img class="img--second" src="./style/resources/JPG/klucze.jpg">
+        </section>
+        <section class="main__item main__item--third"> 
             <article class="article third ">
                 <h2 class="article__title">Gdzie jest wykorzystywany?</h2>
                 <p class="article__text">Używany jest w miejscach, gdzie poufne dane mogłyby zostać rozszyfrowane. RSA zwiększa bezpieczeństwo w sieci. Jednym z najlepszych przykładów jest VPN, gdzie RSA jest potrzebne do tworzenia bezpiecznych połączeń między serwerami VPN a klientami. </p>
@@ -42,12 +46,12 @@
                 <p class="article__text">Największy klucz jaki został rozszyfrowany to 768-bit. Zajęło to 2 lata pracy dużego zespołu naukowców. Faktoryzacja ( rozkład na czynniki )  takiego klucza trwała 2000 lat przetwarzania na jednordzeniowym procesorze Opteron 2,2 GHz. Obecnie standardowym kluczem jest 2048-bit. Zagrożeniem dla RSA jest wynalezienie komputera kwantowego.  </p>
             </article>
             <a href="./szyfr.html" class="button">Jak zaszyfrować wiadomość?</a>
+        </section>
         </main>
-        
-        <footer>
-
-        </footer>
         <script src="./script/hide.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js" integrity="sha512-Q+G390ZU2qKo+e4q+kVcJknwfGjKJOdyu5mVMcR95NqL6XaF4lY4nsSvIVB3NDP54ACsS9rqhE1DVqgpApl//Q==" crossorigin="anonymous"></script>
+        <script src="./script/whatGSAP.js"></script>
     </div>
 </body>
 </html>
